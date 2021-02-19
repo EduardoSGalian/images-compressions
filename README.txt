@@ -1,10 +1,18 @@
-Uso "compressao_svd.jl"
- -Inclua em seu terminal
- -Use a função: compress_svd("nome da imagem","porcentagem de valores singulares a ser mantido")
- 	+Uso da função svd_results() da mesma forma, porém precisa da função quality() presente no arquivo "compresao_jpeg.jl"
+Compressão de imagens
 
-Uso "compressao_jpeg.jl"
- -Inclua em seu terminal, juntamente com "Qmatrixs.jl"
- -Apenas para ver a imagem comprimida use a função: final("nome da imagem")
- -Para análises use: jpeg_results("nome da imagem")
- -A tabela de quantização pode ser alterada alterando a matriz 8x8 Q, no arquivo Qmatrixs.jl existe 4 sugestões.
+ Via SVD
+  Arquivo "svd_compress.jl"
+   svd_compress("nome da imagem","porcentagem de valores singulares a ser mantido")
+  Arquivo "svd_results.jl", requer "quality.jl"
+   svd_results("nome da imagem","porcentagem de valores singulares a ser mantido")
+  
+ Via SVD+
+  Arquivo "svdE_results.jl", requer "quality.jl"
+   svd_results("nome da imagem","porcentagem de valores singulares a ser mantido")
+ 
+ Via JPG
+  Arquivo "jpeg_compress.jl", requer "matrixsQ.jl"
+   jpeg_compress("nome da imagem","matriz Q")
+  Arquivo "jpeg_results.jl", requer "jpeg_compress.jl"
+   jpeg_results("nome da imagem","matriz Q")
+   
